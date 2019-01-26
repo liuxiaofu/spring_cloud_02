@@ -1,0 +1,24 @@
+server:
+  port: 6666
+
+spring:
+  application:
+    name: ZUUL
+
+#eureka相关配置  #要注册到的eureka地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://wangshen:123@localhost:9999/eureka/
+
+# 网关参数设置，一般只配置consumer消费者服务
+zuul:
+  routes:
+    #当地址匹配/user/** 这种形式，zuul认为是要到SERVER-CONSUMER服务中调用
+    #例：/user/login3 ，zuul会去调用SERVER-CONSUMER中的login3这个controller
+    SERVER-CONSUMER: /user/**
+  PreFilter:
+    pre:
+      disable: true
+
+# 关闭某个过滤器 # 要关闭过滤器的类名  # 要关闭过滤器的类名 # 禁用：true

@@ -1,0 +1,13 @@
+server:
+  port: 8003
+
+spring:
+  application:
+    name: SERVER-PROVIDER  #指定当前为服务的名字,做集群时，name的值要一样，即对外作为一个服务
+
+
+#eureka相关配置  #要注册到的eureka地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://wangshen:123@localhost:9999/eureka/

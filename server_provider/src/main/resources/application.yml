@@ -1,0 +1,13 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: SERVER-PROVIDER #指定当前为服务的名字
+
+
+#eureka相关配置  #要注册到的eureka地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://wangshen:123@localhost:9999/eureka/
